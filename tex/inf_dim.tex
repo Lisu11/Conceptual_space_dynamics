@@ -1,0 +1,260 @@
+\documentclass[leqno,12pt]{amsart}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{graphics}
+%\usepackage[notref]{showkeys}
+%\textwidth=30cc \baselineskip=16pt
+\usepackage{comment}
+\usepackage{mathtools}
+\usepackage{hyperref}
+
+%\usepackage[small]{pb-diagram}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\theoremstyle{remark}
+\newtheorem*{note}{Remark}
+
+\theoremstyle{remark}
+\newtheorem*{notation}{\textbf{Notation}}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}{Example}
+
+\numberwithin{equation}{section}
+
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\real}{Re}
+\DeclareMathOperator{\imaginary}{Im}
+\DeclareMathOperator{\sign}{sign}
+\newcommand{\Cov}{\text{{\bf Cov}}}
+\newcommand{\e}{\text{\bf E}}
+\newcommand{\p}{\text{\bf P}}
+\newcommand{\w}{\text{\bf W}}
+
+\renewcommand{\sp}{\par\vspace{1mm}}
+\renewcommand{\L}{\text{L\'{e}vy} }
+\newcommand{\Fr}{\ensuremath{\mathbb{F}}}  % Frechet space
+\newcommand{\F}{\ensuremath{\mathcal F_{\text{cconv}}(\R^d)} } % Our fuzzy vector space
+\newcommand{\FK}{\ensuremath{\mathcal F_{\text{cconv}}^K(\R^d)} }
+\newcommand{\K}{\ensuremath{\K_{\text{conv}}(\R^d)} }
+
+\newcommand{\I}{\ensuremath{\mathrm{I}}}
+
+\newcommand{\h}{\ensuremath{\mathbb{H}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\s}{\ensuremath{\mathbb{S}}}
+\newcommand{\B}{\ensuremath{\mathbb{B}}}
+\newcommand{\pr}{\ensuremath{\mathbb{P}}}
+\newcommand{\T}{\ensuremath{\mathbb{T}}}
+\newcommand{\one}{\ensuremath{\mathbf 1}}
+\newcommand{\tr}{\ensuremath{\mathrm{t}}}
+
+\newcommand{\ch}{\ensuremath{\xi_{x^*}(\cdot)}}
+
+\renewcommand\o{\overline}
+\renewcommand\u{\underline}
+
+\def\mto{\mapsto}
+\def\ch{\ \marginpar{Changed}}
+\def\ali{\aligned}
+\def\eal{\endaligned}
+\def\8{\infty}
+\def\blab#1{\begin{equation}\label{#1}}
+\def\elab{\end{equation}}
+\def\reff#1{~(\ref{#1}) on page~\pageref{#1}}
+%\def\reff#1{~(\vref{#1})}
+\def\reft#1{~\ref{#1} on page~\pageref{#1}}
+\def\refp#1{~(\ref{#1})}
+\def\refn#1{~\ref{#1}}
+\def\lp{\left(}
+\def\rp{\right)}
+\def\sL{\mathcal L}
+\def\fn#1#2{\frac{#1}{#2}}
+\def\De{\Delta }
+\def\W{\Omega }
+\def\g{\gamma }
+\def\m{\mu }
+\def\blab#1{\begin{equation}\label{#1}}
+\def\elab{\end{equation}}
+\def\cd{\cdot}
+\def\fn#1#2{\frac{#1}{#2}}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{1}
+
+\usepackage[toc,page]{appendix}
+
+%\newarrow{Includes}{\subset}
+
+\title[Conceptual spaces dynamics]{An infinite-dimensional extension of Friedkin-Johnsen model  for conceptual space dynamics}
+%\date{\today}
+
+\author[P. Lisowski]{Piotr Lisowski}
+\address{Institute of Computer Science\\
+Wroclaw University\\
+ul. Joliot-Curie 15\\
+50-383 Wroclaw, Poland} \email{piotr.lisowski@cs.uni.wroc.pl}
+
+\author[R. Urban]{Roman Urban}
+\address{Institute of Mathematics\\
+Wroclaw University\\
+Plac Grunwaldzki 2/4\\
+50-384 Wroclaw, Poland}
+\email{urban@math.uni.wroc.pl}
+
+\subjclass[2000]{}
+\keywords{Conseptual space, opinion dynamics, Friedkin-Johnsen}
+
+\begin{document}
+% 
+% 
+% 
+%%%%%%%%%%%%%%%%%  ABSTRACT
+% 
+% 
+% 
+\begin{abstract}
+    Conceptual spaces introduced in \cite{} are an abstract model of knowledge comprehended by a human being. Using some notions from opinion dynamics theory we present mathematical model of spreading knowledge in some network of agents. Those we add a movement to the conceptual spaces theory what should be interpreted as learning in society. Moreover we extend both domains of existing FJ opinion model and conceptual spaces to be infinite-dimensional. 
+\end{abstract}
+\maketitle
+\section{Introduction}
+\section{Conceptual spaces}
+% 
+%       FJ & DeGroot
+% 
+\section{FJ and DeGroot models}
+Lets first consider one dimensional opinion held by $n$ agents in the network. We denote those numbers as vector $x = (x_1, \cdots , x_n)^T \in \R^n$. Those agents have an influence on each other. We insert such dependencies into row-stochastic matrix $W\in \R^{n\times n}$. By $x(k)$ we mean distribution of opinion among agents at stage $k$. Then the simplest model
+\begin{equation}\label{eq:degroot}
+    x(k+1) = Wx(k)
+\end{equation}
+is very classical DeGroots model \cite{bib:degroot}. Of course such system will only reach a consensus state when matrix of influences $W$ is regular \ref{def:regular}.
+\begin{definition}\label{def:regular}
+    Stochastic matrix $A$ is called \textbf{regular} when exists matrix $A^*$ s.t. $A^*=\lim\limits_{n\to \infty}A^n$ {\color{red}sprawdzic definicje i podlinkowac}
+\end{definition}
+First meaningful extension is FJ model \cite{bib:fj1},\cite{bib:fj2},\cite{bib:fj3}. 
+Now we also need actors vulnerability to social influence given as diagonal matrix $\Lambda=(\lambda_{i,j})$ where $0\leqslant \lambda_{i,j} \leqslant 1$. Then the \textit{updating} equation looks as follow
+\begin{equation}\label{eq:fj}
+    x(k+1)=\Lambda Wx(k)+(I-\Lambda)x(0)
+\end{equation}  
+
+
+
+\section{Multidimensional opinion dynamics}
+Since conceptual spaces are in general multidimensional the regular FJ model \ref{eq:fj} does not suffice. We need another generalization. Fortunately \textit{Parsegov} and \textit{Proskurnikov} \cite{bib:parsegov} gave a very neat multidimensional extension of FJ model.
+Now opinions are vectors $x_1(k), \cdots , x_n(k) \in \R^m$. We denote value for dimension $j$ and agent $i$ in time $k$ as $x^j_i(k)$. First easy therefore uninteresting case is when dimensions are independent. I such situation we would simply got $m$ independent FJ equations \ref{eq:fj}.
+More meaningful case is the opposite. When we are dealing with interdependent topics of discussion we need to equip our model with information about a level of entanglement. Those for $m$ issues we need matrix $C\in\R^{m\times m}$ containing such informations.
+The \textit{updating} equations which generalizes \ref{eq:fj} for $i = 1, \cdots, n$ take a form of 
+\begin{equation}\label{eq:mfjs}
+    x_i(k+1)=\lambda_{i,i}C\sum\limits^n_{j=1}w_{i,j}x_j(k)+(1-\lambda_{i,i})x_i(0)
+\end{equation} 
+To write this family of equations in matrix form first we need to concatenate all $x_i$'s into one column vector $x \in \R^{nm}$. Hence $x(k) = \big( x^1_1(k),\cdots , x^m_1(k), x^1_2(k), \cdots , x^m_2(k), \cdots x^1_n(k), \cdots , x^m_n(k) \big)^T$. Now thanks to magic of commutativity and Kroneckers multiplication operator $\hat\otimes$ we get
+\begin{equation}\label{eq:mfj}
+    x(k+1) = \big((\Lambda W) \hat\otimes C\big)x(k) + \big((I_n - \Lambda)\hat\otimes I_m\big)x(0)
+\end{equation} 
+\begin{remark}
+    It is worth to mention that FJ model and its multidimensional extension is originally designed to operate on opinions.  Vector valuated opinion is meant to be one opinion on multiple possibly interdependent topics. Conceptual space perspective is in some sense opposite. We have one subject of interest which we want to describe using its (also possibly dependent) attributes.
+\end{remark}
+\section{Infinite-dimensional opinion}
+Natural question arises. Why stop there? We can go further and assume that opinion is not a vector in $\R^m$ but a sequence $\{x^j\}_{j=1}^\infty$. Later it will be convenient to work in space with inner product so lets assume that $\{x^j\}_{j=1}^\infty$ are from Hilbert space $\ell_2$. We would like very much to keep the results from previous section and only extend equation \ref{eq:mfj}. Fortunately it is very easy to do so. 
+Firstly our domain should be cartesian product of $\ell_2$ with itself $n$-times.  Then we denote the state of opinions in moment $k$ as $x(k) = (\{x_1^j\}_{j=1}^\infty, \cdots ,\{x_n^j\}_{j=1}^\infty)^T \in {\ell_2}^n$.
+Since we no longer have a finite number of dimensions $C$ must not be matrix but linear operator $\mathcal{C}$ of a type $\ell_2 \to \ell_2$. Kronecker product is a special case of tensor product. Therefore we are free to think of an operation $\Lambda W \otimes C$ in two equivalent ways
+\begin{enumerate}
+    \item As it would be a matrix of linear operators written as:
+    \begin{equation*}\label{eq:1form}
+        \Lambda W \otimes \mathcal{C} = \begin{bmatrix} 
+            \lambda_{1,1}w_{1,1}\mathcal{C} & \cdots & \lambda_{1,1}w_{1,n}\mathcal{C} \\
+            \vdots & \ddots & \vdots\\
+            \lambda_{n,n}w_{n,1}\mathcal{C} & \cdots & \lambda_{n,n}w_{n,n}\mathcal{C} \\
+            \end{bmatrix}
+    \end{equation*}
+    \item As linear operator obtained as tensor product defined over Hilbert space $\R^n\otimes \ell_2$. With action defined as usual:
+    \begin{equation*}
+        (\Lambda W \otimes \mathcal{C})(x\otimes y) = (\Lambda Wx) \otimes \mathcal{C}(y)
+    \end{equation*}
+\end{enumerate}
+So now we can see that this changes almost nothing in extended model equation
+\begin{equation}\label{eq:model}
+    x(k+1) = \big((\Lambda W)\otimes \mathcal{C}\big)x(k) + \big((I_n - \Lambda)\otimes \mathcal{I}\big)x(0)
+\end{equation}
+where $\mathcal{I}$ is an identity operator defined over $\ell_2$.\\
+To use second notation we need to decompose every $x \in \ell_2^n$ as tensor. So let $E = \{ e_1, \cdots, e_n\}$ and $H = \{ h_1, \cdots\}$ be a standard basis of Hilbert spaces $\R^n$ and $\ell_2$ respectively. Then
+\begin{align*}
+    x(k+1) &= \big(\Lambda W\otimes \mathcal{C}\big)x(k) + \big((I_n - \Lambda)\otimes \mathcal{I}\big)x(0) \\
+    &= \big(\Lambda W\otimes \mathcal{C}\big)\big(\sum\limits_{i=1}^n\sum\limits_{j=1}^\infty x^j_i(k)(e_i\otimes h_j)\big) + \big((I_n - \Lambda)\otimes \mathcal{I}\big)\big(\sum\limits_{i=1}^n\sum\limits_{j=1}^\infty x^j_i(0)(e_i\otimes h_j)\big)\\
+    &= \sum\limits_{i=1}^n\sum\limits_{j=1}^\infty \Big(
+    x_i^j(k)\big((\Lambda W e_i)\otimes \mathcal{C}(h_j) + x_i^j(0) \big((e_i-\Lambda e_i)\otimes h_j\big)\big)
+    \Big)
+\end{align*}
+\begin{theorem}\label{th:stab_inf}
+    The model \ref{eq:model} is stable if and only if spectral radius $\rho\big(\Lambda W\otimes \mathcal{C}\big) < 1$. If such condition is met then the limit \textit{consensus} vector is equal to
+    \begin{equation}
+        \lim\limits_{n\to \infty}x(k) = \big((I_n-\Lambda W)\otimes (\mathcal{I}- \mathcal{C})\big)^{-1}\big((I_n-\Lambda)\otimes \mathcal{I}\big)x(0)
+    \end{equation}
+\end{theorem}
+\begin{theorem}
+    The model \ref{eq:model} converges if something
+    
+\end{theorem}
+\section{Conceptual network}
+When we have model \ref{eq:model} defined it is very easy to spot how to apply it to theory of conceptual spaces.
+\begin{definition}
+    \textbf{Conceptual network} is a tuple $(\R^n\otimes \ell_2, \mathcal{P}, \lambda,  W, \mathcal{C})$ where 
+    \begin{itemize}
+        \item $\R^n\otimes \ell_2$ domain for concepts.
+        \item $\mathcal{P} :\{1,\cdots, n\} \to \R^n\otimes \ell_2$
+        \item $\lambda : \{1,\cdots, n\} \to \R$
+    \end{itemize}
+\end{definition}
+\section{Conclusions and future work}
+
+
+
+
+\begin{thebibliography}{111}
+
+    \bibitem{44}
+    F. R. Gantmacher.
+    \newblock{\em The theory of matrices.} Vols. 1, 2. Translated by K. A. Hirsch. Chelsea Publishing Co., New York 1959.
+    
+    \bibitem{41}
+    R. A. Horn and C. R. Johnson.
+    \newblock{\em Matrix analysis.}
+    \newblock Second edition. Cambridge University Press, Cambridge, 2013.
+    
+    \bibitem{bib:laub}
+    A. J. Laub.
+    \newblock{\em Matrix analysis for scientists \& engineers.} \newblock Society for Industrial and Applied Mathematics (SIAM), Philadelphia, PA, 2005.
+    
+    \bibitem{bib:degroot} Morris H. Degroot 
+    \newblock{\em Reaching a Consensus} 
+    \newblock{(1974) Journal of the American Statistical Association, 69:345, 118-121}
+    \bibitem{bib:parsegov}
+    S. E. Parsegov, A. V. Proskurnikov, R. Tempo, N. E. Friedkin. \newblock Novel multidimensional models of opinion dynamics in social networks.
+    \newblock{\em IEEE Trans. Automat. Control} 62(5):2270--2285, 2017.
+    
+    \end{thebibliography}
+
+\end{document}
